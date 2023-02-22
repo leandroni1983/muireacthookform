@@ -1,48 +1,12 @@
-import { AccountCircle } from '@mui/icons-material'
-import { Button, Grid, IconButton, InputAdornment, TextField } from '@mui/material'
-import React, { useState } from 'react'
+import { Paper, Typography } from "@mui/material"
+
 
 const HomePage = () => {
-    const [color, setColor] = useState('blue');
-
-    const onSubmit = (e) => {
-        e.preventDefault()
-        console.log('submiteando')
-
-    }
     return (
-        <div>
-            <Grid>
-                <form onSubmit={onSubmit}>
-
-                    <TextField
-                        onFocus={() => setColor('red')}
-                        onBlur={() => setColor('blue')}
-                        InputProps={{
-                            endAdornment: (
-                                <InputAdornment position="start">
-                                    <IconButton
-                                        sx={{ color: color }}
-                                    >
-                                        <AccountCircle
-
-                                        />
-                                    </IconButton>
-                                </InputAdornment>
-                            ),
-                        }}
-                    />
-                    <Button
-                        type='submit'
-                        variant='contained'
-                        onClick={onSubmit}
-                    >
-                        Ingresar
-                    </Button>
-                </form>
-            </Grid>
-        </div >
+        <Paper sx={{ backgroundColor: 'red', mt: 3, textAlign: 'center' }}>
+            <Typography variant="h1">Home App</Typography>
+            <h1>HomeApp</h1>
+        </Paper >
     )
 }
-
 export default HomePage

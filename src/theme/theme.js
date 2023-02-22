@@ -1,5 +1,6 @@
-import { createTheme } from "@mui/material";
 
+import { createTheme }  from '@mui/material/styles'
+import '../style.css'
 export const theme = createTheme({
   palette: {
     primary: {
@@ -7,13 +8,10 @@ export const theme = createTheme({
     },
     secondary: {
         main: "#E5E0FF"
-    },
-    typography: {
-      fontFamily: "Roboto",
-      fontSize: 15,
-    },
-    action:{
-      focus: "#E73009"
-    }
+      },     
+    typography:{
+      allVariants:{
+      fontFamily:'Mynerve,cursive'
+}    },
   }
 });

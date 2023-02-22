@@ -2,7 +2,6 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import LoginPage from './LoginPage'
 import Register from './Register'
 
-import '../App.css'
 function AuthRoutes() {
 
     return (
