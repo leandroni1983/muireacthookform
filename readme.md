@@ -28,5 +28,5 @@ El formulario propiamente dicho se valida y registra con React Hook Form.
 
 
 ### Imagenes del proyecto
-![Login](/src//assets/Login.JPG "Login")!
-![Logup](/src//assets/Logup.JPG "Logup")
+![Login](/src/assets/Login.JPG "Login")
+![Logup](/src/assets/logup.JPG "Logup")
