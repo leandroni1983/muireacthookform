@@ -1,21 +1,20 @@
 import React, { useState } from 'react'
-import { useForm } from 'react-hook-form';
-import { Button, Grid, TextField, Typography, Link, InputAdornment, IconButton } from '@mui/material'
-import { AuthLayout } from './AuthLayout'
+import { useForm } from "react-hook-form";
+import { Button, Grid, TextField, Link, InputAdornment, IconButton, Typography } from '@mui/material'
 import { Link as RouterLink } from "react-router-dom";
-import HowToRegIcon from '@mui/icons-material/HowToReg';
+import { AuthLayout } from './AuthLayout'
+import LoginIcon from '@mui/icons-material/Login';
 import GoogleIcon from '@mui/icons-material/Google';
-import EmailIcon from '@mui/icons-material/Email';
 import { AccountCircle, Visibility, VisibilityOff } from '@mui/icons-material';
-const Register = () => {
+const LoginPage = () => {
+
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
     const [iconAccountCircleColor, seticonAccountCircleColor] = useState('inherit')
     const [iconVisibilityColor, setVisibilityColor] = useState('inherit')
-    const [iconEmailIcon, setEmailIconColor] = useState('inherit')
     const [showPassword, setShowPassword] = useState(false);
 
-    const onSubmit = data => console.log(data)
+    const onSubmit = data => console.log(data);
 
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -24,22 +23,24 @@ const Register = () => {
         event.preventDefault();
     };
 
+
+
     return (
-        <AuthLayout title='LogUp'>
+        <AuthLayout title='LOgIn'>
             <Grid item sx={{ m: 2 }} >
                 <form >
-                    <Grid item xs={12} sx={{ m: 1 }}>
+                    <Grid item xs={12} sx={{ m: 2 }}>
                         <TextField
-                            id="standard-basic-usuario"
-                            error={Boolean(errors.usuario)}
-                            {...register("usuario", { required: true })}
                             margin='normal'
+                            error={Boolean(errors.usuario)}
+                            {...register("usuario", { required: true, maxLength: 20 })}
+                            id="standard-basic-usuario"
                             label="Usuario"
                             variant="standard"
                             color="secondary"
+                            type={'text'}
                             onFocus={() => seticonAccountCircleColor('secondary.main')}
                             onBlur={() => seticonAccountCircleColor('inherit')}
-                            type={'text'}
                             InputProps={{
                                 endAdornment: (
                                     <InputAdornment position="start">
@@ -50,53 +51,15 @@ const Register = () => {
                                     </InputAdornment>
                                 ),
                             }}
-
                         />
                     </Grid>
 
-                    <Grid item xs={12} sx={{ m: 1 }}>
-                        <TextField
-                            margin='normal'
-                            error={Boolean(errors.email)}
-                            id="standard-basic-email"
-                            {...register("email", {
-                                required: true,
-                                pattern: {
-                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                    message: "invalid email address"
-                                }
-                            })}
-                            label="E-Mail"
-                            variant="standard"
-                            color="secondary"
-                            type={'email'}
-                            onFocus={() => setEmailIconColor('secondary.main')}
-                            onBlur={() => setEmailIconColor('inherit')}
-                            InputProps={{
-                                endAdornment: (
-                                    <InputAdornment position="start">
-                                        <IconButton
-                                            sx={{ color: errors.email ? 'error.main' : iconEmailIcon }}>
-                                            <EmailIcon />
-                                        </IconButton>
-                                    </InputAdornment>
-                                ),
-                            }}
-                        />
-                    </Grid>
-
-                    <Grid item xs={12} sx={{ m: 1 }}>
+                    <Grid item xs={12} sx={{ m: 2 }}>
                         <TextField
                             margin='normal'
                             error={Boolean(errors.password)}
+                            {...register("password", { required: true })}
                             id="standard-basic-password"
-                            {...register("password", {
-                                required: true,
-                                pattern: {
-                                    value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gim,
-                                    message: 'Debe contener 8 caracteres, manyusculas y numeros'
-                                }
-                            })}
                             label="Password"
                             variant="standard"
                             color="secondary"
@@ -116,11 +79,9 @@ const Register = () => {
                                         </IconButton>
                                     </InputAdornment>
                                 ),
-                            }} />
-                        {errors.password ? <Typography color={'secondary'} fontSize={'10px'} >{errors.password.message}</Typography> : <></>}
+                            }}
+                        />
                     </Grid>
-
-
 
                     <Grid container spacing={2} sx={{ mb: 2, mt: 1 }}>
                         <Grid item xs={12} sm={6} >
@@ -130,7 +91,7 @@ const Register = () => {
                                 variant='contained'
                                 fullWidth
                                 onClick={handleSubmit(onSubmit)}>
-                                <Typography sx={{ mr: 1 }} >LogUp</Typography>  <HowToRegIcon />
+                                <Typography sx={{ mr: 1 }} >LogIn</Typography>  <LoginIcon />
                             </Button>
 
                         </Grid>
@@ -139,30 +100,28 @@ const Register = () => {
                             <Button
                                 color='error'
                                 fullWidth
-                                variant='contained'
-                            >
+                                variant='contained'>
                                 <GoogleIcon sx={{ color: 'white' }} /> <Typography sx={{ ml: 1, color: 'white' }} >Google</Typography>
                             </Button>
 
                         </Grid>
                     </Grid>
-
                     <Grid container direction='row' justifyContent='end'>
                         <Link
+                            sx={{ mt: 1 }}
 
-                            sx={{ mt: 2 }}
                             component={RouterLink}
                             color="inherit"
-                            underline='none'
-                            to="/auth/login"
-                        >
-                            <Typography> LogIn</Typography>
+                            to="/auth/register"
+                            underline="none">
+                            <Typography> LogUp</Typography>
                         </Link>
                     </Grid>
-                </form >
-            </Grid>
+                </form>
+
+            </Grid >
         </AuthLayout >
     )
 }
 
-export default Register
+export default LoginPage

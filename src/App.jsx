@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import HomePage from './HomePage'
-import AuthRoutes from './pages/AuthRoutes'
+import AuthRoutes from './Auth/AuthRoutes'
 
 
 function App() {

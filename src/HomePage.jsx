@@ -1,12 +1,15 @@
-import { Paper, Typography } from "@mui/material"
-
+import { Box, Grid, Paper, Typography } from "@mui/material"
 
 const HomePage = () => {
     return (
-        <Paper sx={{ backgroundColor: 'red', mt: 3, textAlign: 'center' }}>
+        <Grid
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+            sx={{ backgroundColor: 'primary.main', mt: 3, height: '450px' }}>
             <Typography variant="h1">Home App</Typography>
-            <h1>HomeApp</h1>
-        </Paper >
+        </Grid >
     )
 }
 export default HomePage
