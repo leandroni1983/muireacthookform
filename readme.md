@@ -19,8 +19,14 @@ El formulario propiamente dicho se valida y registra con React Hook Form.
 * [React Router](https://reactrouter.com/)
 
 
-### clona y prueba el repositorio
+### Clona y prueba el repositorio
 
 * clona el repositorio desde el CMD o terminal con el comando: git clone https://github.com/leandroni1983/muireacthookform
 * instala las dependencias del proyecto, ingresa a la carpeta cd /muyreacthookform y corre el comando npm install 
 * corre el comando npm run dev para iniciar el proyecto en tu localHost http://127.0.0.1:5173/
+
+
+
+### Imagenes del proyecto
+![Login](/src//assets/Login.JPG "Login")!
+![Logout](/src//assets/Logout.JPG "Logout")
