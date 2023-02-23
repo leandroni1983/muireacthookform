@@ -30,12 +30,12 @@ const Register = () => {
                 <form >
                     <Grid item xs={12} sx={{ m: 1 }}>
                         <TextField
-                            id="standard-basic-usuario"
+                            id="outlined-basic-usuario"
                             error={Boolean(errors.usuario)}
                             {...register("usuario", { required: true })}
                             margin='normal'
                             label="Usuario"
-                            variant="standard"
+                            variant="outlined"
                             color="secondary"
                             onFocus={() => seticonAccountCircleColor('secondary.main')}
                             onBlur={() => seticonAccountCircleColor('inherit')}
@@ -58,7 +58,7 @@ const Register = () => {
                         <TextField
                             margin='normal'
                             error={Boolean(errors.email)}
-                            id="standard-basic-email"
+                            id="outlined-basic-email"
                             {...register("email", {
                                 required: true,
                                 pattern: {
@@ -67,7 +67,7 @@ const Register = () => {
                                 }
                             })}
                             label="E-Mail"
-                            variant="standard"
+                            variant="outlined"
                             color="secondary"
                             type={'email'}
                             onFocus={() => setEmailIconColor('secondary.main')}
@@ -89,7 +89,7 @@ const Register = () => {
                         <TextField
                             margin='normal'
                             error={Boolean(errors.password)}
-                            id="standard-basic-password"
+                            id="outlinedr-basic-password"
                             {...register("password", {
                                 required: true,
                                 pattern: {
@@ -98,7 +98,7 @@ const Register = () => {
                                 }
                             })}
                             label="Password"
-                            variant="standard"
+                            variant="outlined"
                             color="secondary"
                             type={showPassword ? 'text' : 'password'}
                             onFocus={() => setVisibilityColor('secondary.main')}

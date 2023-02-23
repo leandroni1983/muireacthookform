@@ -4,7 +4,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 
-import App from './App'
+import RoutesApp from './RoutesApp'
 import ButtonAppBar from './components/NavBar'
 import './style.css'
 
@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <ButtonAppBar />
-        <App />
+        <RoutesApp />
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,

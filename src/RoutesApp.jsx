@@ -1,9 +1,9 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import HomePage from './HomePage'
+import HomePage from './pages/HomePage'
 import AuthRoutes from './Auth/AuthRoutes'
 
 
-function App() {
+function RoutesApp() {
 
   return (
     <div className="App">
@@ -19,4 +19,4 @@ function App() {
   )
 }
 
-export default App
+export default RoutesApp

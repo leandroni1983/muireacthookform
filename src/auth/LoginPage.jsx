@@ -34,9 +34,9 @@ const LoginPage = () => {
                             margin='normal'
                             error={Boolean(errors.usuario)}
                             {...register("usuario", { required: true, maxLength: 20 })}
-                            id="standard-basic-usuario"
+                            id="outlined-basic-usuario"
                             label="Usuario"
-                            variant="standard"
+                            variant="outlined"
                             color="secondary"
                             type={'text'}
                             onFocus={() => seticonAccountCircleColor('secondary.main')}
@@ -59,9 +59,9 @@ const LoginPage = () => {
                             margin='normal'
                             error={Boolean(errors.password)}
                             {...register("password", { required: true })}
-                            id="standard-basic-password"
+                            id="outlined-basic-password"
                             label="Password"
-                            variant="standard"
+                            variant="outlined"
                             color="secondary"
                             type={showPassword ? 'text' : 'password'}
                             onFocus={() => setVisibilityColor('secondary.main')}
